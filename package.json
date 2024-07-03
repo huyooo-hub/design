@@ -48,6 +48,7 @@
     "@nuxtjs/algolia": "^1.10.2",
     "@types/node": "^20.12.12",
     "eslint": "^9.3.0",
+    "less": "^4.2.0",
     "nuxt": "^3.11.2",
     "release-it": "^17.2.1",
     "typescript": "^5.4.5",
