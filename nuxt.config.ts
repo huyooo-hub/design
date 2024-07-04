@@ -45,13 +45,8 @@ export default defineNuxtConfig({
     },
   },
   // extends: [envModules.typography],
-  modules: [
-    "@nuxt/content",
-    "@vueuse/nuxt",
-    "nuxt-config-schema",
-    updateModule as any,
-  ],
-  css: [resolve("./assets/css/main.css")],
+  modules: ["nuxt-config-schema", updateModule as any],
+  // css: [resolve("./assets/css/main.css")],
   components: [
     {
       prefix: "",
