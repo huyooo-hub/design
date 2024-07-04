@@ -18,16 +18,16 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {},
   setup(options, _nuxt) {
     const resolver = createResolver(import.meta.url);
-    // installModule("@nuxt/content", {
-    //   documentDriven: false,
-    //   highlight: {
-    //     preload: ["vue", "ts"],
-    //     theme: {
-    //       dark: "github-dark",
-    //       default: "github-light",
-    //     },
-    //   },
-    // });
+    installModule("@nuxt/content", {
+      documentDriven: false,
+      highlight: {
+        preload: ["vue", "ts"],
+        theme: {
+          dark: "github-dark",
+          default: "github-light",
+        },
+      },
+    });
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve("./runtime/plugin"));
     addComponentsDir({
