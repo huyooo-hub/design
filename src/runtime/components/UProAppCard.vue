@@ -6,7 +6,7 @@
           <div class="custom-header">
             <img :src="item.icon" alt="" class="custom-icon" />
           </div>
-          <div class="title">item.title</div>
+          <div class="title">{{ item.title }}</div>
           <div class="subtitle">
             <p>{{ item.subtitle }}</p>
           </div>
@@ -68,7 +68,7 @@ function toLink(url: string) {
     flex: 1;
     .title {
       color: #fff;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       margin-top: 10px;
     }
@@ -80,6 +80,7 @@ function toLink(url: string) {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
+      min-height: 40px;
     }
   }
 }
