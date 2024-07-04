@@ -16,9 +16,9 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  async setup(options, _nuxt) {
+  setup(options, _nuxt) {
     const resolver = createResolver(import.meta.url);
-    await installModule("@nuxt/content", {
+    installModule("@nuxt/content", {
       documentDriven: false,
       highlight: {
         preload: ["vue", "ts"],
