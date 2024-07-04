@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { ref, computed, defineProps, useSlots } from 'vue'
-import UProTabsHeader from './UProTabsHeader.vue'
+import { ref, computed, useSlots } from "vue";
+import UProTabsHeader from "./UProTabsHeader.vue";
 
 const isTag = (slot: any, tag: string) => {
-  return slot.type && slot.type.name && slot.type.name === tag
-}
+  return slot.type && slot.type.name && slot.type.name === tag;
+};
 
 const props = defineProps({
   defaultTabIndex: {
     type: Number,
-    default: 0
-  }
-})
+    default: 0,
+  },
+});
 
-const activeTabIndex = ref(props.defaultTabIndex)
+const activeTabIndex = ref(props.defaultTabIndex);
 
 const updateActiveTabIndex = (index: number) => {
-  console.log(index, 'index')
-  activeTabIndex.value = index
-}
+  console.log(index, "index");
+  activeTabIndex.value = index;
+};
 
-const slots = useSlots()
+const slots = useSlots();
 
 const mappedSlots = computed(() => {
   return (
     slots.default?.().map((slot: any, index: number) => ({
       label: slot.props?.filename || slot.props?.label || `${index}`,
       active: slot.props?.active || false,
-      component: slot
+      component: slot,
     })) || []
-  )
-})
+  );
+});
 </script>
 
 <template>
