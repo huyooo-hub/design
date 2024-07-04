@@ -15,35 +15,35 @@ const updateModule = defineNuxtModule({
   meta: {
     name: "@huyooo-hub/design",
   },
-  setup(_, nuxt) {
-    if (nuxt.options.dev) {
-      $fetch("https://registry.npmjs.org/@huyooo-hub/design/latest")
-        .then((release) => {
-          if (release.version > version) {
-            logger.info(
-              `A new version of Docus (v${release.version}) is available: https://github.com/nuxt-themes/docus/releases/latest`
-            );
-          }
-        })
-        .catch(() => {});
-    }
-  },
+  // setup(_, nuxt) {
+  //   if (nuxt.options.dev) {
+  //     $fetch("https://registry.npmjs.org/@huyooo-hub/design/latest")
+  //       .then((release) => {
+  //         if (release.version > version) {
+  //           logger.info(
+  //             `A new version of Docus (v${release.version}) is available: https://github.com/nuxt-themes/docus/releases/latest`
+  //           );
+  //         }
+  //       })
+  //       .catch(() => {});
+  //   }
+  // },
 });
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  routeRules: {
-    "/api/search": {
-      prerender: true,
-    },
-  },
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: "en",
-      },
-    },
-  },
+  // routeRules: {
+  //   "/api/search": {
+  //     prerender: true,
+  //   },
+  // },
+  // app: {
+  //   head: {
+  //     htmlAttrs: {
+  //       lang: "en",
+  //     },
+  //   },
+  // },
   // extends: [envModules.typography],
   modules: ["nuxt-config-schema", updateModule as any],
   // css: [resolve("./assets/css/main.css")],
@@ -54,32 +54,32 @@ export default defineNuxtConfig({
       global: true,
     },
   ],
-  content: {
-    documentDriven: false,
-    highlight: {
-      theme: {
-        dark: "github-dark",
-        default: "github-light",
-      },
-      preload: [
-        "json",
-        "js",
-        "ts",
-        "html",
-        "css",
-        "vue",
-        "diff",
-        "shell",
-        "markdown",
-        "yaml",
-        "bash",
-        "ini",
-      ],
-    },
-    navigation: {
-      fields: ["icon", "titleTemplate", "header", "main", "aside", "footer"],
-    },
-  },
+  // content: {
+  //   documentDriven: false,
+  //   highlight: {
+  //     theme: {
+  //       dark: "github-dark",
+  //       default: "github-light",
+  //     },
+  //     preload: [
+  //       "json",
+  //       "js",
+  //       "ts",
+  //       "html",
+  //       "css",
+  //       "vue",
+  //       "diff",
+  //       "shell",
+  //       "markdown",
+  //       "yaml",
+  //       "bash",
+  //       "ini",
+  //     ],
+  //   },
+  //   navigation: {
+  //     fields: ["icon", "titleTemplate", "header", "main", "aside", "footer"],
+  //   },
+  // },
   // colorMode: {
   //   classSuffix: "",
   //   dataValue: "theme",
