@@ -1,5 +1,3 @@
 <template>
-  <DocsPageLayout>
-    <slot />
-  </DocsPageLayout>
+  <slot />
 </template>

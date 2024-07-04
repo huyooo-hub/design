@@ -5,13 +5,11 @@ import { version } from "./package.json";
 const { resolve } = createResolver(import.meta.url);
 
 // That allows to overwrite these dependencies paths via `.env` for local development
-const envModules = {
-  tokens: process?.env?.THEME_DEV_TOKENS_PATH || "@huyooo-hub/tokens",
-  elements: process?.env?.THEME_DEV_ELEMENTS_PATH || "@huyooo-hub/elements",
-  studio: process?.env?.THEME_DEV_STUDIO_PATH || "@nuxthq/studio",
-  typography:
-    process?.env?.THEME_DEV_TYPOGRAPHY_PATH || "@huyooo-hub/typography",
-};
+// const envModules = {
+//   tokens: process?.env?.THEME_DEV_TOKENS_PATH || "@huyooo-hub/tokens",
+//   typography:
+//     process?.env?.THEME_DEV_TYPOGRAPHY_PATH || "@huyooo-hub/typography",
+// };
 
 const updateModule = defineNuxtModule({
   meta: {
@@ -37,7 +35,6 @@ export default defineNuxtConfig({
   routeRules: {
     "/api/search": {
       prerender: true,
-      cache: true,
     },
   },
   app: {
@@ -47,35 +44,23 @@ export default defineNuxtConfig({
       },
     },
   },
-  extends: [envModules.typography, envModules.elements],
+  // extends: [envModules.typography],
   modules: [
-    envModules.tokens,
-    envModules.studio,
-    "@nuxtjs/color-mode",
     "@nuxt/content",
     "@vueuse/nuxt",
     "nuxt-config-schema",
-    resolve("./app/module"),
     updateModule as any,
   ],
   css: [resolve("./assets/css/main.css")],
   components: [
     {
       prefix: "",
-      path: resolve("./components/app"),
-      global: true,
-    },
-    {
-      prefix: "",
-      path: resolve("./components/docs"),
+      path: resolve("./components"),
       global: true,
     },
   ],
-  pinceau: {
-    studio: true,
-  },
   content: {
-    documentDriven: true,
+    documentDriven: false,
     highlight: {
       theme: {
         dark: "github-dark",
@@ -100,23 +85,11 @@ export default defineNuxtConfig({
       fields: ["icon", "titleTemplate", "header", "main", "aside", "footer"],
     },
   },
-  colorMode: {
-    classSuffix: "",
-    dataValue: "theme",
-  },
-  experimental: {
-    inlineSSRStyles: false,
-  },
+  // colorMode: {
+  //   classSuffix: "",
+  //   dataValue: "theme",
+  // },
   typescript: {
     includeWorkspace: true,
-  },
-  nitro: {
-    prerender: {
-      ignore: [
-        "/__pinceau_tokens_config.json",
-        "/__pinceau_tokens_schema.json",
-      ],
-      routes: ["/opensearch.xml"],
-    },
   },
 });

@@ -18,41 +18,41 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import DocsTocLinks from './UProDocsLinks.vue'
-import type { PropType } from 'vue'
-import { useScrollspy } from '../../composables/useScrollspy'
+import { useRouter } from "vue-router";
+import DocsTocLinks from "./UProDocsLinks.vue";
+import type { PropType } from "vue";
+import { useScrollspy } from "../composables/useScrollspy";
 defineProps({
   links: {
     type: Array as PropType<any[]>,
-    default: () => []
-  }
-})
+    default: () => [],
+  },
+});
 
-const emit = defineEmits(['move'])
+const emit = defineEmits(["move"]);
 
-const router = useRouter()
+const router = useRouter();
 
-const { activeHeadings, updateHeadings } = useScrollspy()
+const { activeHeadings, updateHeadings } = useScrollspy();
 
 if (process.client) {
   setTimeout(() => {
     updateHeadings([
-      ...Array.from(document.querySelectorAll('.page-body-doc h1')),
-      ...Array.from(document.querySelectorAll('.page-body-doc h2')),
-      ...Array.from(document.querySelectorAll('.page-body-doc h3')),
-      ...Array.from(document.querySelectorAll('.page-body-doc h4'))
-    ])
-  }, 300)
+      ...Array.from(document.querySelectorAll(".page-body-doc h1")),
+      ...Array.from(document.querySelectorAll(".page-body-doc h2")),
+      ...Array.from(document.querySelectorAll(".page-body-doc h3")),
+      ...Array.from(document.querySelectorAll(".page-body-doc h4")),
+    ]);
+  }, 300);
 }
 
-function scrollToHeading (id: string) {
-  router.push(`#${id}`)
-  emit('move', id)
+function scrollToHeading(id: string) {
+  router.push(`#${id}`);
+  emit("move", id);
 }
 
-function childMove (id: string) {
-  emit('move', id)
+function childMove(id: string) {
+  emit("move", id);
 }
 </script>
 

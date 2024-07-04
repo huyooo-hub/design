@@ -3,9 +3,7 @@ export default defineNuxtConfig({
   extends: ["@huyooo-hub/design"],
   devtools: { enabled: true },
 
-  modules: [
-    // Remove it if you don't use Plausible analytics
-    // https://github.com/nuxt-modules/plausible
-    "@nuxtjs/plausible",
-  ],
+  modules: [// Remove it if you don't use Plausible analytics
+  // https://github.com/nuxt-modules/plausible
+  "@nuxtjs/plausible", "@nuxt/image"],
 });

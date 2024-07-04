@@ -1,33 +1,9 @@
-<script setup lang="ts">
-const { config } = useDocus()
-useHead({
-  link: {
-    rel: 'search',
-    type: 'application/opensearchdescription+xml',
-    href: 'opensearch.xml'
-  }
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="page-layout">
-    <Container
-      :fluid="config?.main?.fluid"
-      :padded="config?.main?.padded"
-    >
-      <article>
-        <slot />
-      </article>
-    </Container>
+    <slot />
   </div>
 </template>
 
-<style lang="ts" scoped>
-css({
-'.page-layout': {
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative'
-}
-})
-</style>
+<style lang="less" scoped></style>
