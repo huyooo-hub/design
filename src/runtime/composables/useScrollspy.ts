@@ -1,4 +1,5 @@
-import type { Ref } from 'vue';
+import { onBeforeMount, onBeforeUnmount, ref, watch } from "#imports";
+import type { Ref } from "vue";
 
 /**
  * Scrollspy allows you to watch visible headings in a specific page.
@@ -21,7 +22,7 @@ export const useScrollspy = () => {
     });
 
   const updateHeadings = (headings: Element[]) => {
-    console.log(headings, 'headings');
+    console.log(headings, "headings");
     return headings.forEach((heading) => {
       observer.value.observe(heading);
     });
@@ -30,7 +31,7 @@ export const useScrollspy = () => {
   watch(
     visibleHeadings,
     (val: any, oldVal: any) => {
-      console.log(val, oldVal, 'val, oldVal');
+      console.log(val, oldVal, "val, oldVal");
       if (val.length === 0) {
         activeHeadings.value = oldVal;
       } else {

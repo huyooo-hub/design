@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from "#imports";
+import { reactive, onBeforeUnmount } from "#imports";
 const props = defineProps({
   throttle: {
     type: Number,
