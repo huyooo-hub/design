@@ -38,7 +38,6 @@ defineProps({
 <style scoped lang="less">
 .custom-button {
   color: rgba(0, 0, 0, 0.65);
-  // background-color: rgba(22, 119, 255, 1);
   background-color: rgb(0, 220, 130, 1);
   font-weight: 500;
   border-radius: 6px;
@@ -53,7 +52,6 @@ defineProps({
 }
 
 .custom-button:hover {
-  // background: rgba(22, 119, 255, 0.8);
-  background-color: rgb(0, 220, 130, 0.4);
+  background-color: rgb(0, 193, 106);
 }
 </style>
