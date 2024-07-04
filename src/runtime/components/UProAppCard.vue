@@ -1,67 +1,38 @@
 <template>
-  <ul class="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 xl:grid-cols-3">
-    <li v-for="(item, index) in list" :key="index">
-      <div
-        class="border dark:border-gray-800 dark:bg-zinc-800 border-gray-200 rounded-md p-4 transition duration-200 ease-in-out hover:border-green-400 dark:hover:border-green-400 cursor-pointer"
-      >
-        <div class="header">
-          <img
-            :src="item.icon"
-            alt=""
-            class="w-auto h-12"
-            height="48px"
-            width="48px"
-          />
-        </div>
-        <div class="body pt-6 pb-3">
-          <div>
-            <h4 class="font-semibold u-text-gray-700 text-xl truncate">
-              <div class="flex items-center gap-1.5">
-                <p class="text-lg font-semibold">{{ item.title }}</p>
-                <div
-                  class="flex items-center justify-center rounded-full bg-gradient-to-l from-green-400/30 to-teal-400/30 h-6 w-6"
-                >
-                  <Icon
-                    name="icon-park-outline:download-one"
-                    class="icon h-4 w-4 text-green-400"
-                  />
-                </div>
-              </div>
-            </h4>
+  <ul class="custom-grid">
+    <li v-for="(item, index) in props.list" :key="index">
+      <NuxtLink class="custom-card" :to="item.detailsLink">
+        <div class="custom-body">
+          <div class="custom-header">
+            <img :src="item.icon" alt="" class="custom-icon" />
           </div>
-          <div
-            class="u-text-gray-500 text-sm line-clamp-2 sm:min-h-[40px] mb-4"
-          >
+          <div class="title">item.title</div>
+          <div class="subtitle">
             <p>{{ item.subtitle }}</p>
           </div>
         </div>
-        <div class="footer">
-          <div
-            class="flex items-center justify-between gap-3 -mb-2 u-text-gray-500"
-          >
-            <div class="flex items-center gap-3">
-              <div class="flex items-center gap-1.5">
-                <Icon name="icon-park-outline:like" class="icon" />
-                <span class="text-sm">{{ item.like }}</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <Icon name="material-symbols:menu-book-outline" class="icon" />
-                <span class="text-sm">{{ item.pv }}</span>
-              </div>
+
+        <div class="custom-footer">
+          <div class="custom-footer-info">
+            <div class="custom-like">
+              <Icon name="icon-park-outline:like" class="icon" />
+              <span class="custom-text">{{ item.like }}</span>
             </div>
-            <div
-              class="flex items-center gap-1.5 text-green-400"
-              @click="toLink(item.link)"
-            >
-              <Icon name="quill:arrow-right" class="icon" />
-              <span class="text-sm">跳转</span>
+            <div class="custom-pv">
+              <Icon name="material-symbols:menu-book-outline" class="icon" />
+              <span class="custom-text">{{ item.pv }}</span>
             </div>
           </div>
+          <div class="custom-link" @click="toLink(item.link)">
+            <Icon name="quill:arrow-right" class="icon" />
+            <span class="custom-text">跳转</span>
+          </div>
         </div>
-      </div>
+      </NuxtLink>
     </li>
   </ul>
 </template>
+
 <script setup lang="ts">
 import type { PropType } from "vue";
 const props = defineProps({
@@ -74,3 +45,85 @@ function toLink(url: string) {
   window.open(url);
 }
 </script>
+
+<style scoped lang="less">
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.custom-card {
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  border-radius: 8px;
+
+  transition: border-color 0.2s ease-in-out;
+  background-color: rgb(15, 23, 42);
+  display: flex;
+  flex-direction: column;
+  .custom-body {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    .title {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .subtitle {
+      color: rgb(148, 163, 184);
+      font-size: 15px;
+      font-weight: 400;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+}
+.custom-card:hover {
+  border-color: #34d399;
+}
+
+.custom-icon {
+  height: 48px;
+  width: auto;
+}
+
+.custom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(148, 163, 184);
+  background-color: rgba(30, 41, 59, 0.5);
+  height: 45px;
+  padding: 0px 10px 0px 10px;
+}
+
+.custom-footer-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.custom-like,
+.custom-pv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+.custom-text {
+  font-size: 14px;
+}
+.custom-link {
+  display: flex;
+  align-items: center;
+  color: #00dc82;
+  cursor: pointer;
+}
+.icon {
+  margin-right: 3px;
+}
+</style>
