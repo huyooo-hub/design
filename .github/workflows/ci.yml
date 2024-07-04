@@ -1,37 +1,42 @@
-name: ci-main
+name: ci
 
 on:
   push:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize]
     branches:
       - main
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest] # macos-latest, windows-latest
-        node: [18]
+  lint:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
       - run: corepack enable
-
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          cache: "pnpm"
+          node-version: 20
 
       - name: Install dependencies
-        run: pnpm install
+        run: npx nypm@latest i
 
-      - name: Build
-        run: pnpm prepare
+      - name: Lint
+        run: npm run lint
 
-      - name: Build
-        run: pnpm build
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npx nypm@latest i
+
+      - name: Test
+        run: npm run test
