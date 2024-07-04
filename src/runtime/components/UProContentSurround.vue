@@ -101,7 +101,7 @@ const hoveredIndex = ref<number | null>(null);
     color: #00dc82;
   }
   .description {
-    color: rgb(148, 163, 184);
+    color: rgb(236, 235, 232);
     font-size: 14px;
     font-weight: 400;
 

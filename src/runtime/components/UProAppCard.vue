@@ -73,7 +73,7 @@ function toLink(url: string) {
       margin-top: 10px;
     }
     .subtitle {
-      color: rgb(148, 163, 184);
+      color: rgb(236, 235, 232);
       font-size: 15px;
       font-weight: 400;
       display: -webkit-box;
