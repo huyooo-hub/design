@@ -1,0 +1,134 @@
+[
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "ChatGPT Shortcut",
+    "subtitle": "让生产力加倍的 ChatGPT 快捷指令",
+    "link": "https://nav.6aiq.com/sc/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "IMI Prompt",
+    "subtitle": "中途提示生成器",
+    "link": "https://www.imiprompt.com/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "Prompt Engineering Guide（提示工程指南中文版）",
+    "subtitle": "提示工程（Prompt Engineering）是一门较新的学科，关注提示词开发和优化，帮助用户将大语言模型（Large Language Model, LLM）用于各场景和研究领域。 掌握了提示工程相关技能将",
+    "link": "https://www.promptingguide.ai/zh",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "Prompt Engineering Guide（提示工程指南中文版）",
+    "subtitle": "提示工程（Prompt Engineering）是一门较新的学科，关注提示词开发和优化，帮助用户将大语言模型（Large Language Model, LLM）用于各场景和研究领域。 掌握了提示工程相关技能将",
+    "link": "https://www.promptingguide.ai/zh",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "Midjourney Prompt Generator",
+    "subtitle": "使用数百个有用的预设简化提示过程",
+    "link": "https://prompt.noonshot.com/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "AIPRM",
+    "subtitle": "为您精心策划的 ChatGPT 提示模板。",
+    "link": "https://chrome.google.com/webstore/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "Awesome ChatGPT Prompts",
+    "subtitle": "此仓库包括 ChatGPT 提示词管理，以便更好地使用 ChatGPT。",
+    "link": "https://prompts.chat/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "ChatGPT Prompt Plus",
+    "subtitle": "ChatGPT 的终极提示模板工具",
+    "link": "https://promptplus.org/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "Steamship",
+    "subtitle": "在几秒钟内构建和部署 Prompt API。",
+    "link": "https://www.steamship.com/build/prompt-apis",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "0xAi",
+    "subtitle": "稳定扩散提示和图像生成器",
+    "link": "https://2ai.app/tti",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "ClickPrompt",
+    "subtitle": "ClickPrompt 是一款专为 Prompt 编写者设计的工具，它支持多种基于 Prompt 的 AI 应用，例如 Stable Diffusion、ChatGPT 和 GitHub Copilot 等",
+    "link": "https://www.clickprompt.org/zh-CN/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  },
+  {
+    "icon": "https://api.nuxtjs.org/api/ipx/s_80,f_webp/gh/nuxt/modules/main/icons/eslint.png",
+    "title": "PromptExtend",
+    "subtitle": "扩展/生成更好的 AI 艺术提示",
+    "link": "https://www.promptextend.com/",
+    "type": "prompts",
+    "content": "",
+    "like": 0,
+
+    "pv": 0
+  }
+]
