@@ -30,8 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '../../utils/index'
-import { useRouter } from 'vue-router'
+import { formatDate } from "../utils/index";
+import { useRouter } from "vue-router";
 type Article = {
   _path: string;
   cover: string;
@@ -44,28 +44,28 @@ type Article = {
   date: string;
   description: string;
 };
-const router = useRouter()
+const router = useRouter();
 const props = defineProps({
   article: {
     type: Object,
     required: true,
     validator: (value: Article) => {
       if (value?._path && value.title) {
-        return true
+        return true;
       }
-      return false
-    }
+      return false;
+    },
   },
   featured: {
     type: Boolean,
-    default: false
-  }
-})
-function linkTo (path: string) {
-  console.log(path, 'pathpathpath')
+    default: false,
+  },
+});
+function linkTo(path: string) {
+  console.log(path, "pathpathpath");
   router.push({
-    path: path
-  })
+    path: path,
+  });
 }
 </script>
 
