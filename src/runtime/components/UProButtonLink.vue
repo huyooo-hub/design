@@ -28,9 +28,7 @@ defineProps({
     :to="href"
     :target="blank ? '_blank' : undefined"
   >
-    <button
-      class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3 text-center"
-    >
+    <button class="custom-button">
       <Icon v-if="icon" :name="icon" />
       <ContentSlot :use="$slots.default" unwrap="p ul li" />
     </button>
@@ -38,57 +36,28 @@ defineProps({
 </template>
 
 <style scoped lang="less">
-// .button-link {
-//   display: inline-flex;
-//   flex: none;
-//   align-items: center;
-//   border-radius: 12px;
-//   transition: color 100ms ease-in-out;
-//   font-weight: 700;
-//   color: #ffffff;
-//   background-color: #fbfbfb;
-//   border: 1px solid transparent;
+.custom-button {
+  color: #ffffff; /* text-white */
+  background-color: rgb(0, 220, 130);
+  font-weight: 500;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
 
-//   &:hover {
-//     background-color: #ada9a4;
-//   }
+.custom-button:hover {
+  background: rgb(0, 193, 106);
+}
 
-//   &:focus {
-//     border: 1px solid #fbfbfb;
-//   }
+.custom-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.5);
+}
 
-//   .icon {
-//     margin-inline-end: 0.25rem;
-//   }
-
-//   // 尺寸变体
-//   &.small {
-//     padding: 0.5rem 1rem;
-//     font-size: 0.875rem;
-//     line-height: 1.25rem;
-//   }
-
-//   &.medium {
-//     padding: 0.625rem 1.25rem;
-//     font-size: 0.875rem;
-//     line-height: 1.5rem;
-//   }
-
-//   &.large {
-//     padding: 0.75rem 1.5rem;
-//     font-size: 1.125rem;
-//     line-height: 1.75rem;
-//   }
-
-//   &.giant {
-//     padding: 1rem 2rem;
-//     font-size: 1.125rem;
-//     line-height: 1.75rem;
-//   }
-
-//   // 透明变体
-//   &.transparent {
-//     background-color: transparent;
-//   }
-// }
+.custom-button:focus.dark {
+  box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.5);
+}
 </style>

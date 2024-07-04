@@ -14,7 +14,6 @@ export default defineNuxtModule<ModuleOptions>({
     name: "@huyooo-hub/design",
     configKey: "design",
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
   async setup(options, _nuxt) {
     const resolver = createResolver(import.meta.url);
@@ -29,8 +28,6 @@ export default defineNuxtModule<ModuleOptions>({
       },
     });
     await installModule("@nuxt/icon");
-    // await installModule("@nuxtjs/tailwindcss", {});
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     // addPlugin(resolver.resolve("./runtime/plugin"));
     addComponentsDir({
       path: resolver.resolve("./runtime/components"),
