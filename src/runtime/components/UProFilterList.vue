@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-import FilterList from "./UProFilterList.vue";
+import UProFilterList from "./UProFilterList.vue";
 import type { PropType } from "vue";
 import { computed } from "#imports";
 const emit = defineEmits(["select"]);
@@ -114,7 +114,7 @@ const hasNesting = computed(() =>
         </span>
       </div>
 
-      <FilterList
+      <UProFilterList
         v-show="!isCollapsed(link)"
         v-if="link.children?.length && (max === null || level + 1 < max)"
         :links="link.children"
