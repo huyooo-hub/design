@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, defineProps, useSlots } from 'vue';
-import UProTabsHeader from './UProTabsHeader.vue';
+import { ref, computed, useSlots } from "vue";
+import UProTabsHeader from "./UProTabsHeader.vue";
 
 const isTag = (slot: any, tag: string) => {
   return slot.type && slot.type.name && slot.type.name === tag;
@@ -16,7 +16,7 @@ const props = defineProps({
 const activeTabIndex = ref(props.defaultTabIndex);
 
 const updateActiveTabIndex = (index: number) => {
-  console.log(index, 'index');
+  console.log(index, "index");
   activeTabIndex.value = index;
 };
 
