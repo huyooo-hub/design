@@ -16,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup(options, _nuxt) {
+  async setup(options, _nuxt) {
     const resolver = createResolver(import.meta.url);
     installModule("@nuxt/content", {
       documentDriven: false,
@@ -28,9 +28,10 @@ export default defineNuxtModule<ModuleOptions>({
         },
       },
     });
-    installModule("@nuxtjs/tailwindcss", {});
+    await installModule("@nuxt/icon");
+    // await installModule("@nuxtjs/tailwindcss", {});
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve("./runtime/plugin"));
+    // addPlugin(resolver.resolve("./runtime/plugin"));
     addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       prefix: "",
