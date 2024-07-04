@@ -9,5 +9,6 @@
   margin-inline-start: auto;
   margin-inline-end: auto;
   width: 100%;
+  max-width: 1280px;
 }
 </style>
