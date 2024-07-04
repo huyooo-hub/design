@@ -58,7 +58,7 @@ function toLink(url: string) {
   border-radius: 8px;
 
   transition: border-color 0.2s ease-in-out;
-  background-color: rgb(39, 39, 42);
+  background-color: rgba(39, 39, 42, 0.8);
   display: flex;
   flex-direction: column;
   .custom-body {

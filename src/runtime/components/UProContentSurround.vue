@@ -21,7 +21,12 @@
           <Icon v-if="index === 0" name="heroicons:arrow-left-20-solid" />
           <Icon v-if="index === 1" name="heroicons:arrow-right-20-solid" />
         </div>
-        <div class="title">
+        <div
+          class="title"
+          :class="{
+            'hover-title': hoveredIndex === index,
+          }"
+        >
           {{ item.title }}
         </div>
         <p class="description">
@@ -54,7 +59,7 @@ const hoveredIndex = ref<number | null>(null);
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   .item {
-    border: 1px solid rgb(30, 41, 59);
+    border: 1px solid rgba(226, 232, 240, 0.1);
     padding-bottom: 2rem;
     padding-top: 2rem;
     padding-left: 1.5rem;
@@ -63,7 +68,7 @@ const hoveredIndex = ref<number | null>(null);
     cursor: pointer;
   }
   .item:hover {
-    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid #00dc82;
   }
   .position {
     border-radius: 50%;
@@ -72,17 +77,12 @@ const hoveredIndex = ref<number | null>(null);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #3f3f46;
+    background-color: #27272a;
     color: #fff;
   }
-  // .position:hover {
-  //   border: 1px solid rgba(0, 220, 130, 0.6);
-  //   background-color: rgba(0, 220, 130, 0.1);
-  //   color: rgb(0, 220, 130);
-  // }
   .hover-position {
-    border: 1px solid rgba(0, 220, 130, 0.6);
+    border: 1px solid #00dc82;
     background-color: rgba(0, 220, 130, 0.1);
     color: rgb(0, 220, 130);
   }
@@ -91,6 +91,14 @@ const hoveredIndex = ref<number | null>(null);
     font-size: 15px;
     font-weight: 500;
     margin-top: 10px;
+    // color: #00dc82;
+  }
+  .hover-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #00dc82;
   }
   .description {
     color: rgb(148, 163, 184);
