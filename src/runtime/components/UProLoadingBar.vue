@@ -1,4 +1,5 @@
 <script setup>
+import { reactive } from "#imports";
 const props = defineProps({
   throttle: {
     type: Number,
@@ -68,9 +69,9 @@ function startTimer() {
 }
 
 // Hooks
-nuxtApp.hook('content:middleware:start', start);
-nuxtApp.hook('page:start', start);
-nuxtApp.hook('page:finish', finish);
+nuxtApp.hook("content:middleware:start", start);
+nuxtApp.hook("page:start", start);
+nuxtApp.hook("page:finish", finish);
 
 onBeforeUnmount(() => clear);
 </script>
