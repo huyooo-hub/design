@@ -2,6 +2,7 @@
   "name": "@huyooo-hub/design",
   "version": "1.15.1",
   "type": "module",
+  "private": false,
   "main": "./nuxt.config.ts",
   "packageManager": "pnpm@9.1.1",
   "repository": "nuxt-themes/docus",
