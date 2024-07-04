@@ -28,36 +28,32 @@ defineProps({
     :to="href"
     :target="blank ? '_blank' : undefined"
   >
-    <button class="custom-button">
+    <div class="custom-button">
       <Icon v-if="icon" :name="icon" />
       <ContentSlot :use="$slots.default" unwrap="p ul li" />
-    </button>
+    </div>
   </NuxtLink>
 </template>
 
 <style scoped lang="less">
 .custom-button {
-  color: #ffffff; /* text-white */
-  background-color: rgb(0, 220, 130);
+  color: rgba(0, 0, 0, 0.65);
+  // background-color: rgba(22, 119, 255, 1);
+  background-color: rgb(0, 220, 130, 1);
   font-weight: 500;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 10px 20px;
   text-align: center;
   outline: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
 }
 
 .custom-button:hover {
-  background: rgb(0, 193, 106);
-}
-
-.custom-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.5);
-}
-
-.custom-button:focus.dark {
-  box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.5);
+  // background: rgba(22, 119, 255, 0.8);
+  background-color: rgb(0, 220, 130, 0.4);
 }
 </style>

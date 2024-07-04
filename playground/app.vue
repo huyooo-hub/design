@@ -3,7 +3,7 @@
     Nuxt module playground!
     <UProAlert>221</UProAlert>
     <UProContentSurround :surround="surround"></UProContentSurround>
-    <UProButtonLink>221</UProButtonLink>
+    <UProButtonLink>快速开始</UProButtonLink>
   </div>
 </template>
 

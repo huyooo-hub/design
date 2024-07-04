@@ -16,7 +16,7 @@ let props = defineProps({
 
 <template>
   <NuxtLink class="navbar-logo" to="/" :aria-label="props.title">
-    <div class="flex flex-row items-center justify-items-center">
+    <div class="header">
       <UProIcon
         :name="props.logo"
         filled
@@ -37,6 +37,12 @@ let props = defineProps({
   flex: none;
   height: 1.75rem;
   font-size: 24px;
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   .logo {
     margin-right: 12px;
 
