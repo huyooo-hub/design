@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
+  "name": "@huyooo-hub/design",
+  "version": "1.16.1",
   "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "repository": "your-org/@huyooo-hub/design",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -29,6 +29,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
+    "@nuxt/content": "^2.13.0",
     "@nuxt/kit": "^3.12.3"
   },
   "devDependencies": {
@@ -40,6 +41,7 @@
     "@types/node": "^20.14.9",
     "changelogen": "^0.5.5",
     "eslint": "^9.6.0",
+    "less": "^4.2.0",
     "nuxt": "^3.12.3",
     "typescript": "latest",
     "vitest": "^1.6.0",

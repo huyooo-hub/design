@@ -1,13 +1,13 @@
 {
-  "private": true,
-  "name": "my-module-playground",
-  "type": "module",
-  "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "generate": "nuxi generate"
-  },
-  "dependencies": {
-    "nuxt": "^3.12.3"
-  }
+    "private": true,
+    "name": "@huyooo-hub/design-playground",
+    "type": "module",
+    "scripts": {
+        "dev": "nuxi dev",
+        "build": "nuxi build",
+        "generate": "nuxi generate"
+    },
+    "dependencies": {
+        "nuxt": "^3.12.3"
+    }
 }
