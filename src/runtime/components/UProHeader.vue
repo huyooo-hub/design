@@ -2,7 +2,7 @@
   <header>
     <UProContainer>
       <div class="section left">
-        <UProHeaderLogo logo="logo" title="GTP Gooo" />
+        <UProHeaderLogo :logo="props.logo" :title="props.title" />
       </div>
 
       <div class="section center">
@@ -34,6 +34,16 @@ let props = defineProps({
     required: true,
     default: () => true,
   },
+  logo: {
+    type: String,
+    required: true,
+    default: () => "",
+  },
+  title: {
+    type: String,
+    required: true,
+    default: () => "",
+  },
 });
 </script>
 
@@ -57,7 +67,7 @@ header {
   width: 100%;
   border-bottom: 1px solid #121110;
   background-color: #0c0d0ccc;
-  height: 64px;
+  height: 54px;
 
   .container {
     display: grid;

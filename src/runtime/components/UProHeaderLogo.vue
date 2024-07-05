@@ -59,6 +59,7 @@ let props = defineProps({
   .title {
     font-weight: 700;
     color: #f6f5f4;
+    font-size: 18px;
 
     &:hover {
       color: #10b981;
