@@ -10,12 +10,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect } from "vue";
 const props = defineProps({
   name: {
     type: String,
     required: true,
-    default: () => '',
+    default: () => "",
   },
   filled: {
     type: Boolean,
@@ -27,21 +27,26 @@ const props = defineProps({
     required: false,
     default: () => 24,
   },
+  iconPathPrefix: {
+    type: String,
+    required: false,
+    default: () => "/assets/icons",
+  },
 });
-const icon = ref<string | Record<string, any>>('');
+const icon = ref<string | Record<string, any>>("");
 let hasStroke = false;
 
 async function getIcon() {
   try {
-    const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
-      query: '?raw',
-      import: 'default',
+    const iconsImport = import.meta.glob(`${props.iconPathPrefix}/**/**.svg`, {
+      query: "?raw",
+      import: "default",
       eager: false,
     });
     const rawIcon = (await iconsImport[
-      `/assets/icons/${props.name}.svg`
+      `${props.iconPathPrefix}/${props.name}.svg`
     ]()) as unknown as string;
-    if (rawIcon.includes('stroke')) {
+    if (rawIcon.includes("stroke")) {
       hasStroke = true;
     }
     icon.value = rawIcon;
