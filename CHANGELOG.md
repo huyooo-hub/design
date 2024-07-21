@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.16.26
+
+[compare changes](https://undefined/undefined/compare/v1.16.25...v1.16.26)
+
 ## v1.16.25
 
 [compare changes](https://undefined/undefined/compare/v1.16.24...v1.16.25)
