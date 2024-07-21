@@ -3,7 +3,7 @@
     <template v-if="props.links.length > 0">
       <div class="docs-toc-title">
         <span>目录</span>
-        <Icon name="mdi:chevron-right" class="icon" />
+        <UProIcon name="mdi:chevron-right" class="icon" relative />
       </div>
       <UProTocLinks :links="props.links" @move="move" />
     </template>

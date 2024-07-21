@@ -26,7 +26,7 @@ const isActive = (link: any) =>
           :to="link.redirect ? link.redirect : navBottomLink(link)"
           :class="{ active: isActive(link) }"
         >
-          <Icon v-if="link.icon" :name="link.icon" />
+          <UProIcon v-if="link.icon" :name="link.icon" />
           {{ link.title }}
         </NuxtLink>
       </li>

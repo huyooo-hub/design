@@ -18,8 +18,16 @@
             'hover-position': hoveredIndex === index,
           }"
         >
-          <Icon v-if="index === 0" name="heroicons:arrow-left-20-solid" />
-          <Icon v-if="index === 1" name="heroicons:arrow-right-20-solid" />
+          <UProIcon
+            v-if="index === 0"
+            name="heroicons:arrow-left-20-solid"
+            relative
+          />
+          <UProIcon
+            v-if="index === 1"
+            name="heroicons:arrow-right-20-solid"
+            relative
+          />
         </div>
         <div
           class="title"

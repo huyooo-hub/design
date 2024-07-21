@@ -76,7 +76,7 @@ const hasNesting = computed(() =>
         @click="toggleCollapse(link)"
       >
         <span class="content">
-          <Icon
+          <UProIcon
             v-if="link?.navigation?.icon || link.icon"
             :name="link?.navigation?.icon || link.icon"
             class="icon"
@@ -84,7 +84,8 @@ const hasNesting = computed(() =>
           <span>{{ link?.navigation?.title || link.title || link.value }}</span>
         </span>
         <span>
-          <Icon
+          <UProIcon
+            relative
             :name="
               isCollapsed(link)
                 ? 'lucide:chevrons-up-down'
@@ -105,7 +106,7 @@ const hasNesting = computed(() =>
         @click="clickLink(link)"
       >
         <span class="content">
-          <Icon
+          <UProIcon
             v-if="link?.navigation?.icon || link.icon"
             :name="link?.navigation?.icon || link.icon"
             class="icon"

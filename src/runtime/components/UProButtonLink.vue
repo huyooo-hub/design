@@ -29,7 +29,7 @@ defineProps({
     :target="blank ? '_blank' : undefined"
   >
     <div class="custom-button">
-      <Icon v-if="icon" :name="icon" />
+      <UProIcon v-if="icon" :name="icon" />
       <ContentSlot :use="$slots.default" unwrap="p ul li" />
     </div>
   </NuxtLink>

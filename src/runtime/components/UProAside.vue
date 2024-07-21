@@ -21,7 +21,7 @@ const props = defineProps({
       :links="props.navigation"
     />
     <NuxtLink v-else to="/" class="go-back-link">
-      <Icon name="heroicons-outline:arrow-left" class="icon" />
+      <UProIcon name="heroicons-outline:arrow-left" class="icon" relative />
       <span class="text">Go back</span>
     </NuxtLink>
   </nav>

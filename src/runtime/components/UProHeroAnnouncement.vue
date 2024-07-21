@@ -2,18 +2,18 @@
 defineProps({
   to: {
     type: String,
-    default: '',
+    default: "",
   },
   label: {
     type: String,
-    default: '',
+    default: "",
   },
 });
 </script>
 
 <template>
   <NuxtLink :to="to" class="link">
-    <Icon name="heroicons-solid:sparkles" class="icon" />
+    <UProIcon name="heroicons-solid:sparkles" class="icon" relative="" />
     <span>{{ label }}</span>
   </NuxtLink>
 </template>

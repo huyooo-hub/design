@@ -15,19 +15,20 @@
         <div class="custom-footer">
           <div class="custom-footer-info">
             <div class="custom-like">
-              <UProIcon name="like" class="icon" />
+              <UProIcon name="icon-park-outline:like" class="icon" relative />
               <span class="custom-text">{{ item.like }}</span>
             </div>
             <div class="custom-pv">
               <UProIcon
                 name="material-symbols:menu-book-outline"
                 class="icon"
+                relative
               />
               <span class="custom-text">{{ item.pv }}</span>
             </div>
           </div>
           <div class="custom-link" @click="toLink(item.link)">
-            <UProIcon name="quill:arrow-right" class="icon" />
+            <UProIcon name="quill:arrow-right" class="icon" relative />
             <span class="custom-text">跳转</span>
           </div>
         </div>

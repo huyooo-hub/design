@@ -24,7 +24,7 @@ console.log(tree.value, "treetree11");
     <UProAsideTree v-if="tree?.length > 0" :links="tree" />
     111
     <!-- <NuxtLink v-else to="/" class="go-back-link">
-      <Icon name="heroicons-outline:arrow-left" class="icon" />
+      <UProIcon name="heroicons-outline:arrow-left" class="icon" />
       <span class="text">Go back</span>
     </NuxtLink> -->
   </nav>

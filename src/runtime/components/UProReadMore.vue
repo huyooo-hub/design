@@ -1,6 +1,6 @@
 <template>
   <UProAlert>
-    <Icon name="heroicons-outline:information-circle" />
+    <UProIcon name="heroicons-outline:information-circle" relative />
     Read more in
     <NuxtLink :to="link"> {{ computedTitle }} </NuxtLink>.
   </UProAlert>
