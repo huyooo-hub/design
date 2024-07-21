@@ -5,7 +5,7 @@
     @click="linkTo(props.article._path)"
   >
     <div class="image">
-      <NuxtImg
+      <img
         v-if="props.article.cover"
         :src="props.article.cover"
         :alt="props.article.title"

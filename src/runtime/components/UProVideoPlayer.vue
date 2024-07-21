@@ -50,7 +50,7 @@ const src = computed(() => props.src || props.sources?.[0]?.src || false);
 
 <template>
   <div class="video-player" :class="{ loaded }">
-    <NuxtImg
+    <img
       v-if="provider ? provider.poster : poster"
       :src="(provider ? provider.poster : poster as any)"
     />
