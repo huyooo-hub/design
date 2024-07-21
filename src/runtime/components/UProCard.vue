@@ -1,15 +1,6 @@
-<script setup lang="ts">
-defineProps({
-  icon: {
-    type: String,
-    default: '',
-  },
-});
-</script>
-
 <template>
   <div class="card">
-    <Icon v-if="icon" :name="icon" />
+    <UProIcon v-if="icon" :name="icon" />
     <slot />
     <div>
       <h3 class="title">
@@ -23,6 +14,14 @@ defineProps({
     </div>
   </div>
 </template>
+<script setup lang="ts">
+defineProps({
+  icon: {
+    type: String,
+    default: "",
+  },
+});
+</script>
 
 <style scoped lang="less">
 .card {
