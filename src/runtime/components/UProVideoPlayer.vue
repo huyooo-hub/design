@@ -51,6 +51,7 @@ const src = computed(() => props.src || props.sources?.[0]?.src || false);
 <template>
   <div class="video-player" :class="{ loaded }">
     <img
+      class="image"
       v-if="provider ? provider.poster : poster"
       :src="(provider ? provider.poster : poster as any)"
     />
@@ -93,6 +94,11 @@ const src = computed(() => props.src || props.sources?.[0]?.src || false);
   border-radius: 14px;
   border-width: 2px;
   height: 16rem;
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
   .loaded {
     position: absolute;
