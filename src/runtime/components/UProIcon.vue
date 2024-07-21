@@ -27,24 +27,19 @@ const props = defineProps({
     required: false,
     default: () => 24,
   },
-  iconPathPrefix: {
-    type: String,
-    required: false,
-    default: () => "/assets/icons",
-  },
 });
 const icon = ref<string | Record<string, any>>("");
 let hasStroke = false;
 
 async function getIcon() {
   try {
-    const iconsImport = import.meta.glob(`${props.iconPathPrefix}/**/**.svg`, {
+    const iconsImport = import.meta.glob("assets/icons/**/**.svg", {
       query: "?raw",
       import: "default",
       eager: false,
     });
     const rawIcon = (await iconsImport[
-      `${props.iconPathPrefix}/${props.name}.svg`
+      `/assets/icons/${props.name}.svg`
     ]()) as unknown as string;
     if (rawIcon.includes("stroke")) {
       hasStroke = true;
