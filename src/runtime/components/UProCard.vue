@@ -1,6 +1,7 @@
 <template>
   <div class="card">
-    <UProIcon v-if="icon" :name="icon" />
+    <!-- <UProIcon v-if="icon" :name="icon" /> -->
+    <UProIcon name="like" class="icon" />
     <slot />
     <div>
       <h3 class="title">
