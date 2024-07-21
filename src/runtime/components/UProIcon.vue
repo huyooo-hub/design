@@ -22,6 +22,11 @@ const props = defineProps({
     required: false,
     default: () => false,
   },
+  relative: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
   size: {
     type: Number,
     required: false,
@@ -32,23 +37,44 @@ const icon = ref<string | Record<string, any>>("");
 let hasStroke = false;
 
 async function getIcon() {
-  try {
-    const iconsImport = import.meta.glob("assets/icons/**/**.svg", {
-      query: "?raw",
-      import: "default",
-      eager: false,
-    });
-    const rawIcon = (await iconsImport[
-      `/assets/icons/${props.name}.svg`
-    ]()) as unknown as string;
-    if (rawIcon.includes("stroke")) {
-      hasStroke = true;
+  if (props.relative) {
+    try {
+      const iconsImport = import.meta.glob("../assets/icons/**/**.svg", {
+        query: "?raw",
+        import: "default",
+        eager: false,
+      });
+      const rawIcon = (await iconsImport[
+        `../assets/icons/${props.name}.svg`
+      ]()) as unknown as string;
+      if (rawIcon.includes("stroke")) {
+        hasStroke = true;
+      }
+      icon.value = rawIcon;
+    } catch {
+      console.error(
+        `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
+      );
     }
-    icon.value = rawIcon;
-  } catch {
-    console.error(
-      `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
-    );
+  } else {
+    try {
+      const iconsImport = import.meta.glob("/assets/icons/**/**.svg", {
+        query: "?raw",
+        import: "default",
+        eager: false,
+      });
+      const rawIcon = (await iconsImport[
+        `/assets/icons/${props.name}.svg`
+      ]()) as unknown as string;
+      if (rawIcon.includes("stroke")) {
+        hasStroke = true;
+      }
+      icon.value = rawIcon;
+    } catch {
+      console.error(
+        `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
+      );
+    }
   }
 }
 
