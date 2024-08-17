@@ -22,59 +22,28 @@ const props = defineProps({
     required: false,
     default: () => false,
   },
-  relative: {
-    type: Boolean,
-    required: false,
-    default: () => false,
-  },
-  size: {
-    type: Number,
-    required: false,
-    default: () => 24,
-  },
 });
 const icon = ref<string | Record<string, any>>("");
 let hasStroke = false;
 
 async function getIcon() {
-  if (props.relative) {
-    try {
-      const iconsImport = import.meta.glob("../assets/icons/**/**.svg", {
-        query: "?raw",
-        import: "default",
-        eager: false,
-      });
-      const rawIcon = (await iconsImport[
-        `../assets/icons/${props.name}.svg`
-      ]()) as unknown as string;
-      if (rawIcon.includes("stroke")) {
-        hasStroke = true;
-      }
-      icon.value = rawIcon;
-    } catch {
-      console.error(
-        `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
-      );
+  try {
+    const iconsImport = import.meta.glob("/assets/icons/**/**.svg", {
+      query: "?raw",
+      import: "default",
+      eager: false,
+    });
+    const rawIcon = (await iconsImport[
+      `/assets/icons/${props.name}.svg`
+    ]()) as string;
+    if (rawIcon.includes("stroke")) {
+      hasStroke = true;
     }
-  } else {
-    try {
-      const iconsImport = import.meta.glob("/assets/icons/**/**.svg", {
-        query: "?raw",
-        import: "default",
-        eager: false,
-      });
-      const rawIcon = (await iconsImport[
-        `/assets/icons/${props.name}.svg`
-      ]()) as unknown as string;
-      if (rawIcon.includes("stroke")) {
-        hasStroke = true;
-      }
-      icon.value = rawIcon;
-    } catch {
-      console.error(
-        `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
-      );
-    }
+    icon.value = rawIcon;
+  } catch {
+    console.error(
+      `[my-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
+    );
   }
 }
 
@@ -87,7 +56,6 @@ watchEffect(getIcon);
 .my-icon svg {
   width: 1em;
   height: 1em;
-  margin-bottom: 0.125em;
   vertical-align: middle;
 }
 .my-icon.my-icon--fill,
